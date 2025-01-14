@@ -23,29 +23,23 @@ export async function isAuthenticated() {
 export function initAddToCartListeners() {
   const buttons = document.querySelectorAll(".js-add-to-cart");
 
+  if (!buttons.length) {
+    console.error("No Add to Cart buttons found.");
+  }
+
   buttons.forEach((button) => {
-    // Remove any existing listeners and replace with a new button
+    console.log("Initializing listener for button:", button);
     const newButton = button.cloneNode(true);
     button.replaceWith(newButton);
 
-    newButton.addEventListener("click", async (event) => {
+    newButton.addEventListener("click", async () => {
       const productId = newButton.dataset.productId;
-
       if (!productId) {
         console.error("Missing productId for Add to Cart button.");
         return;
       }
-      // Check authentication
-      const isUserAuthenticated = await isAuthenticated();
-      if (!isUserAuthenticated) {
-        // Redirect to login page
-        alert("You must be logged in to add items to your cart.");
-        window.location.href = "/login.html";
-        return;
-      }
 
-      // Proceed with adding to cart
-      await handleAddToCart(productId, button);
+      await handleAddToCart(productId, newButton);
     });
   });
 }
@@ -56,19 +50,33 @@ async function handleAddToCart(productId, button) {
     button.disabled = true;
     button.textContent = "Adding...";
 
-    await addToCart(productId, 1); // Add the product to the cart
-    await updateCartQuantity(); // Update the cart icon in the navbar
-
-    // Show "Added to Cart" message
     const productContainer = button.closest(".product-container");
-    if (productContainer) {
-      const addedMessage = productContainer.querySelector(".added-to-cart");
-      if (addedMessage) {
-        addedMessage.classList.remove("hidden");
-        setTimeout(() => {
-          addedMessage.classList.add("hidden");
-        }, 2000);
-      }
+    if (!productContainer) {
+      console.error("Add to Cart button not inside a .product-container.");
+      return;
+    }
+
+    const quantitySelector =
+      productContainer.querySelector(".quantity-selector");
+    if (!quantitySelector) {
+      console.error("Quantity selector not found in product container.");
+      return;
+    }
+
+    const quantity = parseInt(quantitySelector.value, 10) || 1;
+
+    // Add to cart
+    await addToCart(productId, quantity);
+    await updateCartQuantity();
+
+    // Show success message
+    const addedMessage = productContainer.querySelector(".added-to-cart");
+    if (addedMessage) {
+      addedMessage.textContent = `${quantity} item(s) added to the cart!`;
+      addedMessage.classList.remove("hidden");
+      setTimeout(() => {
+        addedMessage.classList.add("hidden");
+      }, 2000);
     }
   } catch (error) {
     console.error("Error adding product to cart:", error);

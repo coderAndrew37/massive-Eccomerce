@@ -1,6 +1,7 @@
 import { fetchProducts, renderProducts } from "./fetchContent/products.js";
 import { renderPagination } from "./fetchContent/pagination.js";
 import { formatCurrency } from "./utils/currency.js";
+import { updateCartQuantity } from "../data/cart.js";
 import "./search.js";
 import "./menuToggle.js";
 import "./animations.js";
@@ -8,6 +9,7 @@ import "./authButton.js";
 import "./carousel.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+  updateCartQuantity();
   const featuredProductsContainer = document.querySelector(
     "#featured-products .grid"
   );

@@ -22,15 +22,26 @@ export function generateProductHTML(product, formatCurrency) {
       <p class="text-xl font-semibold text-idcHighlight">
         ${formatCurrency(product.priceCents)}
       </p>
-      <div class="added-to-cart hidden text-green-600 text-center font-bold mb-4">
+      <div class="flex items-center space-x-4">
+        <select
+          class="quantity-selector border border-idcHighlight rounded-lg px-2 py-1 text-idcText"
+          data-product-id="${product._id}"
+        >
+          ${Array.from(
+            { length: 10 },
+            (_, i) => `<option value="${i + 1}">${i + 1}</option>`
+          ).join("")}
+        </select>
+        <button
+          class="js-add-to-cart px-4 py-2 bg-idcHighlight text-black font-bold rounded-lg hover:bg-opacity-90"
+          data-product-id="${product._id}"
+        >
+          Add to Cart
+        </button>
+      </div>
+      <div class="added-to-cart hidden text-green-600 text-center font-bold mt-4">
         Added to Cart!
       </div>
-      <button
-        class="js-add-to-cart w-full mt-4 px-4 py-2 bg-idcHighlight text-black font-bold rounded-lg hover:bg-opacity-90"
-        data-product-id="${product._id}"
-      >
-        Add to Cart
-      </button>
     </div>
   `;
 }

@@ -3,24 +3,50 @@ const mongoose = require("mongoose");
 const authMiddleware = require("../middleware/auth.js");
 const router = express.Router();
 const User = require("../models/user.js");
+const { Product } = require("../models/product.js"); // Destructure Product = require("../models/product.js");
+console.log("Product Model:", Product);
 
 // Fetch the products in the cart with delivery options
 router.get("/get-cart", authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.userId);
-
     if (!user) return res.status(404).json({ message: "User not found." });
 
-    // Sample delivery options
+    const cartProductIds = user.cart.map((item) => item.productId);
+
+    console.log("Fetching products for IDs:", cartProductIds); // Debugging log
+    const products = await Product.find({ _id: { $in: cartProductIds } });
+
+    console.log("Fetched products:", products); // Debugging log
+
+    const cart = user.cart
+      .map((cartItem) => {
+        const product = products.find(
+          (prod) => prod._id.toString() === cartItem.productId.toString()
+        );
+        if (!product) {
+          console.warn(
+            `Product not found for cart item with ID ${cartItem.productId}`
+          );
+          return null; // Exclude items with missing products
+        }
+        return {
+          ...cartItem.toObject(),
+          name: product.name,
+          priceCents: product.priceCents,
+        };
+      })
+      .filter(Boolean); // Remove null items
+
     const deliveryOptions = [
-      { id: "1", deliveryDays: 3, priceCents: 5000 },
-      { id: "2", deliveryDays: 7, priceCents: 2000 },
+      { id: "1", deliveryDays: 3, priceCents: 50000 },
+      { id: "2", deliveryDays: 7, priceCents: 20000 },
       { id: "3", deliveryDays: 10, priceCents: 0 },
     ];
 
-    res.status(200).json({ cart: user.cart, deliveryOptions });
+    res.status(200).json({ cart, deliveryOptions });
   } catch (error) {
-    console.error("Error fetching cart:", error);
+    console.error("Error fetching cart:", error); // Improved error logging
     res.status(500).json({ message: "Internal server error." });
   }
 });

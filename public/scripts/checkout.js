@@ -22,16 +22,24 @@ async function fetchCartItems() {
       );
       if (productResponse.ok) {
         const products = await productResponse.json();
-        cartItems = cartItems.map((item) => {
-          const matchingProduct = products.find(
-            (product) => product._id === item.productId
-          );
-          return {
-            ...item,
-            name: matchingProduct?.name || "Unknown Item",
-            priceCents: matchingProduct?.priceCents || 0,
-          };
-        });
+        cartItems = cartItems
+          .map((item) => {
+            const matchingProduct = products.find(
+              (product) => product._id === item.productId
+            );
+            if (!matchingProduct) {
+              console.warn(
+                `Product not found for cart item with ID ${item.productId}`
+              );
+              return null;
+            }
+            return {
+              ...item,
+              name: matchingProduct.name,
+              priceCents: matchingProduct.priceCents,
+            };
+          })
+          .filter(Boolean); // Remove null items
       } else {
         console.warn("Could not fetch product details.");
       }

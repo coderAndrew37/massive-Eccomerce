@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products by Category</title>
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="bg-idcBackground text-idcText font-idcSans">
+    <header>
+      <!-- Include common navigation -->
+    </header>
+    <main>
+      <section id="category-products" class="py-16 bg-idcBackground">
+        <div class="container mx-auto px-6">
+          <h2
+            id="category-title"
+            class="text-3xl font-idcSerif text-idcPrimary mb-6 text-center"
+          >
+            Category
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Products dynamically populated here -->
+          </div>
+          <div
+            class="skeletons hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <!-- Skeleton loaders -->
+          </div>
+          <div id="pagination" class="flex justify-center mt-8"></div>
+        </div>
+      </section>
+    </main>
+    <script src="/scripts/category.js"></script>
+  </body>
+</html>

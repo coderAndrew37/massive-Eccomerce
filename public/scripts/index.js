@@ -7,9 +7,11 @@ import "./menuToggle.js";
 import "./animations.js";
 import "./authButton.js";
 import "./carousel.js";
+import "./newsletter.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  updateCartQuantity();
+document.addEventListener("DOMContentLoaded", async () => {
+  // Update cart quantity on load
+  await updateCartQuantity();
   const featuredProductsContainer = document.querySelector(
     "#featured-products .grid"
   );

@@ -1,8 +1,15 @@
 import { fetchProducts, renderProducts } from "./fetchContent/products.js";
 import { renderPagination } from "./fetchContent/pagination.js";
 import { formatCurrency } from "./utils/currency.js";
+import { updateCartQuantity } from "../data/cart.js";
+import "./search.js";
+import "./menuToggle.js";
+import "./animations.js";
+import "./authButton.js";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  // Update cart quantity on load
+  await updateCartQuantity();
   const urlParams = new URLSearchParams(window.location.search);
   const category = urlParams.get("category") || "furniture"; // Default to 'furniture'
   const categoryTitle = document.getElementById("category-title");

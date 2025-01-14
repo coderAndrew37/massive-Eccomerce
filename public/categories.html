@@ -99,7 +99,7 @@
             <i class="fas fa-shopping-cart text-xl"></i>
             <span
               id="cart-count"
-              class="absolute top-0 right-0 bg-idcHighlight text-black text-sm rounded-full px-2 py-1 hidden"
+              class="js-cart-quantity absolute top-0 right-0 bg-idcHighlight text-black text-sm rounded-full px-2 py-1"
             >
               0
             </span>
@@ -236,10 +236,15 @@
         </div>
       </section>
     </main>
-    <script src="/scripts/category.js" type="module"></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"
       crossorigin="anonymous"
     ></script>
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+    <script src="/scripts/category.js" type="module"></script>
   </body>
 </html>

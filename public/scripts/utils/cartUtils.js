@@ -28,7 +28,6 @@ export function initAddToCartListeners() {
   }
 
   buttons.forEach((button) => {
-    console.log("Initializing listener for button:", button);
     const newButton = button.cloneNode(true);
     button.replaceWith(newButton);
 

@@ -1,5 +1,6 @@
 import { toggleSkeletons } from "./skeletons.js";
 import { generateProductHTML } from "./productHTML.js";
+import { initAddToCartListeners } from "../utils/cartUtils.js";
 
 export async function fetchProducts(
   url,
@@ -55,4 +56,7 @@ export function renderProducts(products, container, formatCurrency) {
   container.innerHTML = products
     .map((product) => generateProductHTML(product, formatCurrency))
     .join("");
+
+  // Reattach Add to Cart event listeners
+  initAddToCartListeners();
 }

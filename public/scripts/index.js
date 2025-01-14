@@ -1,9 +1,5 @@
 import { fetchProducts, renderProducts } from "./fetchContent/products.js";
-import { renderTestimonials } from "./fetchContent/testimonials.js";
-import { renderFAQs } from "./fetchContent/faqs.js";
 import { renderPagination } from "./fetchContent/pagination.js";
-import { toggleSkeletons } from "./fetchContent/skeletons.js";
-import { testimonials, faqs } from "../data/data.js";
 import { formatCurrency } from "./utils/currency.js";
 import "./search.js";
 import "./menuToggle.js";

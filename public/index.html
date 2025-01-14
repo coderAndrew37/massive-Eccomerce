@@ -140,60 +140,63 @@
           <i class="fas fa-times"></i>
         </button>
         <div class="mt-16 space-y-6 px-6 text-idcPrimary">
-          <a href="#about" class="block text-lg hover:text-idcHighlight"
-            >About</a
+          <a
+            href="#about"
+            class="block text-lg hover:text-idcHighlight flex items-center"
           >
+            <i class="fas fa-info-circle mr-3"></i> About
+          </a>
 
-          <!-- Products Dropdown in Mobile Menu -->
-          <div>
-            <button
-              class="w-full text-left text-lg hover:text-idcHighlight flex justify-between items-center"
-              aria-label="Toggle Products"
-              id="mobile-products-toggle"
-            >
-              Products <i class="fas fa-chevron-down ml-2 text-sm"></i>
-            </button>
-            <ul
-              id="mobile-products-dropdown"
-              class="hidden pl-6 space-y-2 mt-2 border-l-2 border-idcHighlight"
-            >
-              <li>
-                <a
-                  href="/categories/furniture"
-                  class="block text-lg hover:text-idcHighlight"
-                  >Furniture</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/categories/electronics"
-                  class="block text-lg hover:text-idcHighlight"
-                  >Electronics</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/categories/cars"
-                  class="block text-lg hover:text-idcHighlight"
-                  >Cars</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/categories/appliances"
-                  class="block text-lg hover:text-idcHighlight"
-                  >Household Appliances</a
-                >
-              </li>
-            </ul>
-          </div>
+          <!-- Direct Categories with Icons -->
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="/categories.html?category=furniture"
+                class="block text-lg hover:text-idcHighlight flex items-center"
+              >
+                <i class="fas fa-couch mr-3"></i> Furniture
+              </a>
+            </li>
+            <li>
+              <a
+                href="/categories.html?category=electronics"
+                class="block text-lg hover:text-idcHighlight flex items-center"
+              >
+                <i class="fas fa-tv mr-3"></i> Electronics
+              </a>
+            </li>
+            <li>
+              <a
+                href="/categories.html?category=cars"
+                class="block text-lg hover:text-idcHighlight flex items-center"
+              >
+                <i class="fas fa-car mr-3"></i> Cars
+              </a>
+            </li>
+            <li>
+              <a
+                href="/categories.html?category=plots"
+                class="block text-lg hover:text-idcHighlight flex items-center"
+              >
+                <i class="fas fa-map mr-3"></i> Plots
+              </a>
+            </li>
+            <li>
+              <a
+                href="/categories.html?category=appliances"
+                class="block text-lg hover:text-idcHighlight flex items-center"
+              >
+                <i class="fas fa-blender mr-3"></i> Household Appliances
+              </a>
+            </li>
+          </ul>
 
-          <a href="#projects" class="block text-lg hover:text-idcHighlight"
-            >Gallery</a
+          <a
+            href="#contact"
+            class="block text-lg hover:text-idcHighlight flex items-center"
           >
-          <a href="#contact" class="block text-lg hover:text-idcHighlight"
-            >Contact</a
-          >
+            <i class="fas fa-envelope mr-3"></i> Contact
+          </a>
         </div>
       </nav>
 

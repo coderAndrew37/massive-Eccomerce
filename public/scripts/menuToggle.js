@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const mobileMenuButton = document.getElementById("mobile-menu");
+  const mobileMenuButton = document.getElementById("mobile-menu-toggle");
+  const closeMenuButton = document.getElementById("close-mobile-menu");
   const mobileNav = document.getElementById("mobile-nav");
   const pageOverlay = document.createElement("div");
   pageOverlay.className =
@@ -21,6 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileMenuButton.setAttribute("aria-expanded", isOpen);
     document.body.classList.toggle("overflow-hidden", isOpen); // Prevent scrolling
   });
+
+  // Add functionality to close menu with the X button
+  closeMenuButton.addEventListener("click", closeMenu);
 
   // Close menu when overlay is clicked
   pageOverlay.addEventListener("click", closeMenu);

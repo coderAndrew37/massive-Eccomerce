@@ -196,6 +196,31 @@
           >
         </div>
       </nav>
+
+      <!-- Sliding Search Bar -->
+      <div
+        id="search-bar"
+        class="fixed top-[-100px] left-0 right-0 bg-idcAccent z-50 px-6 py-4 shadow-md transition-transform duration-300"
+      >
+        <div class="container mx-auto flex items-center">
+          <input
+            type="text"
+            id="search-input"
+            class="w-full p-2 text-idcText bg-idcBackground rounded-lg border border-idcHighlight focus:outline-none"
+            placeholder="Search for products..."
+          />
+          <button id="close-search" class="ml-4 text-idcPrimary">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+        <ul
+          id="search-suggestions"
+          class="bg-idcBackground rounded-lg shadow-lg mt-2 hidden"
+        ></ul>
+        <div id="search-loader" class="hidden text-center mt-2">
+          <i class="fas fa-spinner fa-spin text-idcHighlight text-xl"></i>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->

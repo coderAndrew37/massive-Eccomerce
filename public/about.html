@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | JM HoMe Furniture Mombasa</title>
+    <title>About Us | Broad Spectrum Marketplace</title>
 
     <!-- Tailwind CSS -->
     <link rel="stylesheet" href="/output.css" />
@@ -11,85 +11,83 @@
 
   <body class="bg-idcBackground text-idcText font-idcSans">
     <!-- Navbar -->
-    <header class="bg-idcAccent sticky top-0 z-50">
+    <header class="bg-idcAccent sticky top-0 z-50 shadow-md">
       <div
         class="container mx-auto flex items-center justify-between py-4 px-6"
       >
-        <a href="/" class="text-xl font-bold text-idcPrimary"
-          >JM HoMe Furniture</a
-        >
-        <nav class="hidden md:flex space-x-6">
-          <a
-            href="/"
-            class="text-idcPrimary no-underline hover:text-idcHighlight"
-            >Home</a
-          >
-          <a href="/about.html" class="text-idcHighlight no-underline font-bold"
-            >About</a
-          >
-          <a
-            href="/#services"
-            class="text-idcPrimary no-underline hover:text-idcHighlight"
+        <a href="/" class="text-2xl font-bold text-idcPrimary">
+          <i class="fas fa-store"></i> Broad Spectrum Mart
+        </a>
+        <nav class="hidden md:flex space-x-6 text-idcPrimary">
+          <a href="/" class="hover:text-idcHighlight transition">Home</a>
+          <a href="/about.html" class="text-idcHighlight font-bold">About</a>
+          <a href="#categories" class="hover:text-idcHighlight transition"
             >Products</a
           >
-          <a
-            href="/#projects"
-            class="text-idcPrimary no-underline hover:text-idcHighlight"
-            >Gallery</a
-          >
-          <a
-            href="/#contact"
-            class="text-idcPrimary no-underline hover:text-idcHighlight"
+          <a href="#contact" class="hover:text-idcHighlight transition"
             >Contact</a
           >
         </nav>
-        <button id="mobile-menu" class="md:hidden text-idcPrimary">
-          <i class="fas fa-bars text-xl"></i>
+        <button
+          id="mobile-menu-toggle"
+          class="md:hidden text-xl text-idcPrimary"
+        >
+          <i class="fas fa-bars"></i>
         </button>
       </div>
     </header>
 
     <!-- Hero Section -->
+    <section
+      class="relative w-full h-64 bg-cover bg-center flex items-center justify-center"
+      style="background-image: url('/images/about-banner.jpg')"
+    >
+      <div class="text-center text-white">
+        <h1 class="text-4xl font-extrabold drop-shadow-md">About Us</h1>
+        <p class="mt-2 text-lg font-light">
+          Learn more about our mission, vision, and what drives us.
+        </p>
+      </div>
+    </section>
+
+    <!-- Mission, Vision, Values Section -->
     <section class="py-16">
-      <div
-        class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12"
-      >
-        <!-- Mission -->
-        <div class="text-center p-6 bg-idcBackground shadow-lg rounded-lg">
-          <i class="fas fa-bullseye text-idcHighlight text-5xl mb-4"></i>
-          <h2 class="text-xl font-bold text-idcPrimary mb-4">Our Mission</h2>
-          <p>
-            To provide high-quality, stylish, and durable furniture that
-            enhances the comfort and beauty of every Kenyan home.
-          </p>
-        </div>
-
-        <!-- Vision -->
-        <div class="text-center p-6 bg-idcBackground shadow-lg rounded-lg">
-          <i class="fas fa-eye text-idcHighlight text-5xl mb-4"></i>
-          <h2 class="text-xl font-bold text-idcPrimary mb-4">Our Vision</h2>
-          <p>
-            To be the most trusted furniture brand in Kenya, delivering
-            innovation, quality, and timeless elegance.
-          </p>
-        </div>
-
-        <!-- Values -->
-        <div class="text-center p-6 bg-idcBackground shadow-lg rounded-lg">
-          <i class="fas fa-handshake text-idcHighlight text-5xl mb-4"></i>
-          <h2 class="text-xl font-bold text-idcPrimary mb-4">Our Values</h2>
-          <p>
-            Integrity, craftsmanship, customer satisfaction, and a passion for
-            functional, beautiful furniture.
-          </p>
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-idcPrimary mb-12">
+          Our Mission, Vision, and Values
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center bg-idcBackground p-6 shadow-lg rounded-lg">
+            <i class="fas fa-bullseye text-idcHighlight text-5xl mb-4"></i>
+            <h3 class="text-xl font-bold text-idcPrimary">Our Mission</h3>
+            <p class="mt-2">
+              To provide high-quality, stylish, and durable products for every
+              need.
+            </p>
+          </div>
+          <div class="text-center bg-idcBackground p-6 shadow-lg rounded-lg">
+            <i class="fas fa-eye text-idcHighlight text-5xl mb-4"></i>
+            <h3 class="text-xl font-bold text-idcPrimary">Our Vision</h3>
+            <p class="mt-2">
+              To be the most trusted marketplace globally, delivering quality
+              and variety.
+            </p>
+          </div>
+          <div class="text-center bg-idcBackground p-6 shadow-lg rounded-lg">
+            <i class="fas fa-handshake text-idcHighlight text-5xl mb-4"></i>
+            <h3 class="text-xl font-bold text-idcPrimary">Our Values</h3>
+            <p class="mt-2">
+              Integrity, reliability, innovation, and customer satisfaction.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Meet the Team -->
+    <!-- Meet the Team Section -->
     <section class="bg-idcAccent py-16">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-idcSerif text-idcPrimary mb-6 text-center">
+        <h2 class="text-3xl font-bold text-center text-idcPrimary mb-12">
           Meet Our Team
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -99,8 +97,8 @@
               alt="CEO"
               class="w-32 h-32 rounded-full mx-auto shadow-lg mb-4 object-cover"
             />
-            <h3 class="text-xl font-semibold text-idcPrimary">Peter Mwangi</h3>
-            <p class="text-sm text-idcText">Chief Executive Officer</p>
+            <h3 class="text-xl font-bold text-idcPrimary">Peter Mwangi</h3>
+            <p class="text-sm">Chief Executive Officer</p>
           </div>
           <div class="text-center">
             <img
@@ -108,8 +106,8 @@
               alt="Head Designer"
               class="w-32 h-32 rounded-full mx-auto shadow-lg mb-4 object-cover"
             />
-            <h3 class="text-xl font-semibold text-idcPrimary">Susan Wanjiru</h3>
-            <p class="text-sm text-idcText">Head Designer</p>
+            <h3 class="text-xl font-bold text-idcPrimary">Susan Wanjiru</h3>
+            <p class="text-sm">Head Designer</p>
           </div>
           <div class="text-center">
             <img
@@ -117,8 +115,8 @@
               alt="Project Manager"
               class="w-32 h-32 rounded-full mx-auto shadow-lg mb-4 object-cover"
             />
-            <h3 class="text-xl font-semibold text-idcPrimary">Mark Otieno</h3>
-            <p class="text-sm text-idcText">Project Manager</p>
+            <h3 class="text-xl font-bold text-idcPrimary">Mark Otieno</h3>
+            <p class="text-sm">Project Manager</p>
           </div>
           <div class="text-center">
             <img
@@ -126,49 +124,37 @@
               alt="Customer Support"
               class="w-32 h-32 rounded-full mx-auto shadow-lg mb-4 object-cover"
             />
-            <h3 class="text-xl font-semibold text-idcPrimary">Grace Muthoni</h3>
-            <p class="text-sm text-idcText">Customer Support Lead</p>
+            <h3 class="text-xl font-bold text-idcPrimary">Grace Muthoni</h3>
+            <p class="text-sm">Customer Support Lead</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Why Choose Us -->
+    <!-- Testimonials Section -->
     <section class="py-16">
       <div class="container mx-auto px-6">
-        <h2 class="text-3xl font-idcSerif text-idcPrimary mb-6 text-center">
-          Why Choose Us
+        <h2 class="text-3xl font-bold text-center text-idcPrimary mb-12">
+          What Our Customers Say
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-            class="text-center bg-idcBackground p-6 rounded-lg shadow-lg transition-transform hover:-translate-y-2 hover:shadow-2xl"
-          >
-            <i class="fas fa-couch text-idcHighlight text-5xl mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Expert Craftsmanship</h3>
-            <p>
-              We specialize in making furniture with superior materials and
-              unmatched attention to detail.
+          <div class="bg-idcBackground p-6 shadow-lg rounded-lg">
+            <p class="italic text-gray-600">
+              "Great quality products and outstanding service!"
             </p>
+            <p class="mt-4 font-bold text-idcPrimary">- Jane Doe</p>
           </div>
-          <div
-            class="text-center bg-idcBackground p-6 rounded-lg shadow-lg transition-transform hover:-translate-y-2 hover:shadow-2xl"
-          >
-            <i class="fas fa-smile text-idcHighlight text-5xl mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Personalized Service</h3>
-            <p>
-              Every piece is tailored to your preferences, ensuring maximum
-              satisfaction.
+          <div class="bg-idcBackground p-6 shadow-lg rounded-lg">
+            <p class="italic text-gray-600">
+              "A reliable platform with innovative solutions."
             </p>
+            <p class="mt-4 font-bold text-idcPrimary">- John Smith</p>
           </div>
-          <div
-            class="text-center bg-idcBackground p-6 rounded-lg shadow-lg transition-transform hover:-translate-y-2 hover:shadow-2xl"
-          >
-            <i class="fas fa-leaf text-idcHighlight text-5xl mb-4"></i>
-            <h3 class="text-xl font-semibold mb-2">Sustainable Solutions</h3>
-            <p>
-              We prioritize eco-friendly materials and practices for a greener
-              future.
+          <div class="bg-idcBackground p-6 shadow-lg rounded-lg">
+            <p class="italic text-gray-600">
+              "Broad Spectrum exceeded my expectations."
             </p>
+            <p class="mt-4 font-bold text-idcPrimary">- Alex Kim</p>
           </div>
         </div>
       </div>
@@ -177,7 +163,7 @@
     <!-- Footer -->
     <footer class="bg-idcBackground text-center py-4">
       <p class="text-idcText">
-        © 2024 JM HoMe Furniture Mombasa. All Rights Reserved.
+        © 2025 Broad Spectrum Marketplace. All Rights Reserved.
       </p>
     </footer>
 

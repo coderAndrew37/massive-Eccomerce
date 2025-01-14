@@ -1,7 +1,9 @@
 import { fetchProducts, renderProducts } from "./fetchContent/products.js";
+import { renderFAQs } from "./fetchContent/faqs.js";
 import { renderPagination } from "./fetchContent/pagination.js";
 import { formatCurrency } from "./utils/currency.js";
 import { updateCartQuantity } from "../data/cart.js";
+import { faqs } from "../data/data.js";
 import "./search.js";
 import "./menuToggle.js";
 import "./animations.js";
@@ -15,6 +17,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const featuredProductsContainer = document.querySelector(
     "#featured-products .grid"
   );
+  // Render FAQs
+  if (faqs && Array.isArray(faqs)) {
+    renderFAQs(faqs, "#faqs .space-y-4");
+  } else {
+    console.error("FAQs data is not an array or is undefined.");
+  }
   const skeletonContainer = document.querySelector(
     "#featured-products .skeletons"
   );

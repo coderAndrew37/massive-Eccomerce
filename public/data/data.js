@@ -21,28 +21,48 @@ export const testimonials = [
 
 export const faqs = [
   {
-    question: "How long does a typical project take?",
+    question: "How do I place an order?",
     answer:
-      "Timelines depend on the scope of the project. Most designs take 2–6 weeks.",
+      "To place an order, browse through our categories, select your desired products, and add them to the cart. Once done, proceed to checkout and follow the instructions to complete your purchase.",
   },
   {
-    question: "Do you offer services outside Nairobi?",
+    question: "What payment methods do you accept?",
     answer:
-      "Yes, we work with clients across Kenya, including coastal and upcountry regions.",
+      "We accept major payment methods including credit/debit cards, mobile payments (like M-Pesa), and bank transfers. All transactions are secure and encrypted.",
   },
   {
-    question: "Can I request a consultation before committing?",
+    question: "Do you offer delivery services?",
     answer:
-      "Absolutely! We offer free initial consultations to discuss your needs.",
+      "Yes, we offer delivery services nationwide. Delivery timelines and costs depend on your location and the size of the order.",
   },
   {
-    question: "Do you handle renovations?",
+    question: "Can I track my order?",
     answer:
-      "Yes, we specialize in transforming outdated spaces into stunning interiors.",
+      "Absolutely! Once your order is shipped, you'll receive a tracking number and a link to monitor your delivery status in real time.",
   },
   {
-    question: "What is your pricing structure?",
+    question: "What is your return policy?",
     answer:
-      "Our pricing depends on the project’s complexity and size. Contact us for a custom quote.",
+      "We accept returns within 14 days of delivery, provided the item is unused and in its original packaging. Contact our support team to initiate a return.",
+  },
+  {
+    question: "Are your products covered by warranty?",
+    answer:
+      "Yes, many of our products come with a warranty. Warranty details are specified in the product descriptions.",
+  },
+  {
+    question: "How do I contact customer support?",
+    answer:
+      "You can reach our customer support team via email, phone, or live chat. Visit the 'Contact' section of our website for more details.",
+  },
+  {
+    question: "Can I sell my products on your marketplace?",
+    answer:
+      "Yes, we welcome sellers to join our platform. Visit the 'Sell with Us' section to learn more and register as a seller.",
+  },
+  {
+    question: "Are the products on your platform authentic?",
+    answer:
+      "We ensure that all products listed on our marketplace are authentic and sourced from verified sellers. If you encounter any issues, contact support immediately.",
   },
 ];

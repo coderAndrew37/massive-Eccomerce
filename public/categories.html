@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products by Category</title>
+    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="bg-idcBackground text-idcText font-idcSans">
+    <header class="bg-idcAccent sticky top-0 z-50 shadow-md">
+      <div
+        class="container mx-auto flex items-center justify-between py-4 px-6"
+      >
+        <!-- Logo -->
+        <a href="/" class="text-2xl font-bold text-idcPrimary">
+          <i class="fas fa-store"></i> Broad Spectrum Mart
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6 text-idcPrimary relative">
+          <a href="#about" class="hover:text-idcHighlight transition">About</a>
+
+          <!-- Dropdown for Products -->
+          <div class="relative group">
+            <a
+              href="#categories"
+              class="hover:text-idcHighlight transition flex items-center"
+            >
+              Categories <i class="fas fa-chevron-down ml-2 text-sm"></i>
+            </a>
+            <div
+              class="absolute left-0 top-full mt-2 bg-idcAccent shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300"
+            >
+              <ul class="p-4 space-y-2">
+                <li>
+                  <a
+                    href="/categories.html?category=furniture"
+                    class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
+                    >Furniture</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/categories.html?category=electronics"
+                    class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
+                    >Electronics</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/categories.html?category=cars"
+                    class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
+                    >Cars</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/categories.html?category=plots"
+                    class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
+                    >Plots</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/categories.html?category=household"
+                    class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
+                    >Household Appliances</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Icons Section -->
+        <div class="flex items-center space-x-4">
+          <!-- Search -->
+          <button
+            id="search-button"
+            class="text-xl text-idcPrimary hover:text-idcHighlight transition"
+            aria-label="Search"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+
+          <!-- Cart -->
+          <a
+            href="/checkout.html"
+            class="relative text-idcPrimary hover:text-idcHighlight transition"
+          >
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span
+              id="cart-count"
+              class="absolute top-0 right-0 bg-idcHighlight text-black text-sm rounded-full px-2 py-1 hidden"
+            >
+              0
+            </span>
+          </a>
+
+          <!-- Auth -->
+          <button
+            class="js-auth-button px-4 py-2 rounded-lg bg-idcPrimary text-white hover:bg-idcHighlight transition"
+            aria-label="Account"
+          >
+            Login
+          </button>
+
+          <!-- Mobile Menu Toggle -->
+          <button
+            id="mobile-menu-toggle"
+            class="md:hidden text-idcPrimary text-xl"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav
+        id="mobile-nav"
+        class="fixed top-0 right-0 w-4/5 max-w-xs h-full bg-idcAccent shadow-lg transform translate-x-full transition-transform duration-300 md:hidden"
+      >
+        <button
+          id="close-mobile-menu"
+          class="absolute top-4 right-4 text-idcPrimary text-2xl"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="mt-16 space-y-6 px-6 text-idcPrimary">
+          <!-- Products Dropdown in Mobile Menu -->
+          <div>
+            <button
+              class="w-full text-left text-lg hover:text-idcHighlight flex justify-between items-center"
+              aria-label="Toggle Products"
+              id="mobile-products-toggle"
+            >
+              Products <i class="fas fa-chevron-down ml-2 text-sm"></i>
+            </button>
+            <ul
+              id="mobile-products-dropdown"
+              class="hidden pl-6 space-y-2 mt-2 border-l-2 border-idcHighlight"
+            >
+              <li>
+                <a
+                  href="/categories/furniture"
+                  class="block text-lg hover:text-idcHighlight"
+                  >Furniture</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/categories/electronics"
+                  class="block text-lg hover:text-idcHighlight"
+                  >Electronics</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/categories/cars"
+                  class="block text-lg hover:text-idcHighlight"
+                  >Cars</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/categories/appliances"
+                  class="block text-lg hover:text-idcHighlight"
+                  >Household Appliances</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <a href="/#contact" class="block text-lg hover:text-idcHighlight"
+            >Contact</a
+          >
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="category-products" class="py-16 bg-idcBackground">
+        <div class="container mx-auto px-6">
+          <h2
+            id="category-title"
+            class="text-3xl font-idcSerif text-idcPrimary mb-6 text-center"
+          >
+            Category
+          </h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Products dynamically populated here -->
+          </div>
+          <!-- Skeleton loading placeholder -->
+          <div
+            class="skeletons hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <!-- Skeleton Card 1 -->
+            <div class="skeleton bg-gray-300 animate-pulse rounded-lg p-6">
+              <div class="h-48 bg-gray-400 rounded-lg mb-4"></div>
+              <div class="h-6 bg-gray-400 rounded mb-2"></div>
+              <div class="h-4 bg-gray-400 rounded mb-4"></div>
+              <div class="h-8 bg-gray-400 rounded"></div>
+            </div>
+            <!-- Skeleton Card 2 -->
+            <div class="skeleton bg-gray-300 animate-pulse rounded-lg p-6">
+              <div class="h-48 bg-gray-400 rounded-lg mb-4"></div>
+              <div class="h-6 bg-gray-400 rounded mb-2"></div>
+              <div class="h-4 bg-gray-400 rounded mb-4"></div>
+              <div class="h-8 bg-gray-400 rounded"></div>
+            </div>
+            <!-- Skeleton Card 3 -->
+            <div class="skeleton bg-gray-300 animate-pulse rounded-lg p-6">
+              <div class="h-48 bg-gray-400 rounded-lg mb-4"></div>
+              <div class="h-6 bg-gray-400 rounded mb-2"></div>
+              <div class="h-4 bg-gray-400 rounded mb-4"></div>
+              <div class="h-8 bg-gray-400 rounded"></div>
+            </div>
+          </div>
+          <!-- Pagination -->
+          <div id="pagination" class="flex justify-center mt-8"></div>
+        </div>
+      </section>
+    </main>
+    <script src="/scripts/category.js" type="module"></script>
+  </body>
+</html>

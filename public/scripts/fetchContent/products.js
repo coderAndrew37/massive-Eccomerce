@@ -14,7 +14,12 @@ export async function fetchProducts(
   try {
     toggleSkeletons(skeletonContainer, productsContainer, true);
 
-    const response = await fetch(`${url}?page=${page}&limit=${limit}`);
+    // Correct URL construction based on whether '?' exists in the base URL
+    const fetchUrl = url.includes("?")
+      ? `${url}&page=${page}&limit=${limit}`
+      : `${url}?page=${page}&limit=${limit}`;
+
+    const response = await fetch(fetchUrl);
     const data = await response.json();
 
     if (data.products && data.products.length > 0) {

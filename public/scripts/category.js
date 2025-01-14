@@ -1,6 +1,5 @@
 import { fetchProducts, renderProducts } from "./fetchContent/products.js";
 import { renderPagination } from "./fetchContent/pagination.js";
-import { toggleSkeletons } from "./fetchContent/skeletons.js";
 import { formatCurrency } from "./utils/currency.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -11,24 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
     category.charAt(0).toUpperCase() + category.slice(1)
   }`;
 
-  const featuredProductsContainer = document.querySelector(
-    "#featured-products .grid"
-  );
+  const productsContainer = document.querySelector("#category-products .grid"); // Fixed selector
   const skeletonContainer = document.querySelector(
-    "#featured-products .skeletons"
-  );
+    "#category-products .skeletons"
+  ); // Fixed selector
+
   const paginationContainer = document.getElementById("pagination");
   const productsPerPage = 12;
 
-  const categoryUrl = `/api/products?category=${category}`;
+  const categoryUrl = `/api/products?category=${category}`; // Correct base URL
   fetchProducts(
     categoryUrl,
     1,
     productsPerPage,
     skeletonContainer,
-    featuredProductsContainer,
-    (products) =>
-      renderProducts(products, featuredProductsContainer, formatCurrency),
+    productsContainer, // Updated variable name
+    (products) => renderProducts(products, productsContainer, formatCurrency),
     paginationContainer,
     (container, currentPage, totalPages, fetchFunction) =>
       renderPagination(container, currentPage, totalPages, fetchFunction)

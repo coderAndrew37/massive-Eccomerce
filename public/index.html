@@ -13,83 +13,182 @@
   </head>
 
   <body class="bg-idcBackground text-idcText font-idcSans">
-    <header class="bg-idcAccent sticky top-0 z-50">
+    <header class="bg-idcAccent sticky top-0 z-50 shadow-md">
       <div
         class="container mx-auto flex items-center justify-between py-4 px-6"
       >
-        <a href="/" class="text-xl font-bold text-idcPrimary"
-          >JM HoMe Furniture</a
-        >
-        <nav
-          id="mobile-nav"
-          class="fixed top-0 right-0 w-4/5 max-w-xs h-full bg-idcAccent shadow-lg transform translate-x-full transition-transform duration-300 z-50 md:hidden"
-        >
-          <a href="#about" class="block p-4 hover:bg-idcHighlight">About</a>
-          <a href="#featured-products" class="block p-4 hover:bg-idcHighlight"
-            >Products</a
-          >
-          <a href="#projects" class="block p-4 hover:bg-idcHighlight"
+        <!-- Logo -->
+        <a href="/" class="text-2xl font-bold text-idcPrimary">
+          JM Home Furniture
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-6 text-idcPrimary relative">
+          <a href="#about" class="hover:text-idcHighlight transition">About</a>
+
+          <!-- Dropdown for Products -->
+          <div class="relative group">
+            <a
+              href="#featured-products"
+              class="hover:text-idcHighlight transition flex items-center"
+            >
+              Products <i class="fas fa-chevron-down ml-2 text-sm"></i>
+            </a>
+            <div
+              class="absolute left-0 top-full mt-2 bg-idcAccent shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300"
+            >
+              <ul class="p-4 space-y-2">
+                <li class="group">
+                  <a
+                    href="/categories/furniture"
+                    class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
+                    >Furniture</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/categories/electronics"
+                    class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
+                    >Electronics</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/categories/cars"
+                    class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
+                    >Cars</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/categories/household"
+                    class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
+                    >Household Appliances</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <a href="#projects" class="hover:text-idcHighlight transition"
             >Gallery</a
           >
-          <a href="#contact" class="block p-4 hover:bg-idcHighlight">Contact</a>
-        </nav>
-
-        <nav class="hidden md:flex space-x-8">
-          <a href="#about" class="hover:text-idcHighlight">About</a>
-          <a href="#featured-products" class="hover:text-idcHighlight"
-            >Products</a
+          <a href="#contact" class="hover:text-idcHighlight transition"
+            >Contact</a
           >
-          <a href="#projects" class="hover:text-idcHighlight">Gallery</a>
-          <a href="#contact" class="hover:text-idcHighlight">Contact</a>
         </nav>
 
+        <!-- Icons Section -->
         <div class="flex items-center space-x-4">
+          <!-- Search -->
           <button
             id="search-button"
-            class="text-xl text-idcPrimary px-4 py-2 rounded hover:bg-idcBackground"
+            class="text-xl text-idcPrimary hover:text-idcHighlight transition"
+            aria-label="Search"
           >
             <i class="fas fa-search"></i>
           </button>
-          <a href="/checkout.html" class="relative">
-            <i class="fas fa-shopping-cart text-idcPrimary text-xl"></i>
+
+          <!-- Cart -->
+          <a
+            href="/checkout.html"
+            class="relative text-idcPrimary hover:text-idcHighlight transition"
+          >
+            <i class="fas fa-shopping-cart text-xl"></i>
             <span
               id="cart-count"
-              class="js-cart-quantity absolute top-0 right-0 bg-idcHighlight text-black text-sm rounded-full px-2 py-1 hidden"
-              >0</span
+              class="absolute top-0 right-0 bg-idcHighlight text-black text-sm rounded-full px-2 py-1 hidden"
             >
+              0
+            </span>
           </a>
+
+          <!-- Auth -->
           <button
-            class="js-auth-button px-4 py-2 rounded-lg text-white"
-          ></button>
-          <button id="mobile-menu" class="md:hidden">
-            <i class="fas fa-bars text-idcPrimary text-xl"></i>
+            class="js-auth-button px-4 py-2 rounded-lg bg-idcPrimary text-white hover:bg-idcHighlight transition"
+            aria-label="Account"
+          >
+            Login
+          </button>
+
+          <!-- Mobile Menu Toggle -->
+          <button
+            id="mobile-menu-toggle"
+            class="md:hidden text-idcPrimary text-xl"
+          >
+            <i class="fas fa-bars"></i>
           </button>
         </div>
       </div>
-      <!-- Sliding search bar directly in HTML -->
-      <div
-        id="search-bar"
-        class="fixed top-[-100px] left-0 right-0 bg-idcAccent z-50 px-6 py-4 transition-transform duration-300"
+
+      <!-- Mobile Menu -->
+      <nav
+        id="mobile-nav"
+        class="fixed top-0 right-0 w-4/5 max-w-xs h-full bg-idcAccent shadow-lg transform translate-x-full transition-transform duration-300 md:hidden"
       >
-        <div class="container mx-auto flex items-center">
-          <input
-            type="text"
-            id="search-input"
-            class="flex-grow p-3 rounded-lg text-idcText bg-idcBackground border border-idcHighlight focus:outline-none"
-            placeholder="Search for products..."
-          />
-          <button id="close-search" class="text-idcPrimary ml-4">
-            <i class="fas fa-times text-xl"></i>
-          </button>
+        <button
+          id="close-mobile-menu"
+          class="absolute top-4 right-4 text-idcPrimary text-2xl"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="mt-16 space-y-6 px-6 text-idcPrimary">
+          <a href="#about" class="block text-lg hover:text-idcHighlight"
+            >About</a
+          >
+
+          <!-- Products Dropdown in Mobile Menu -->
+          <div>
+            <button
+              class="w-full text-left text-lg hover:text-idcHighlight flex justify-between items-center"
+              aria-label="Toggle Products"
+              id="mobile-products-toggle"
+            >
+              Products <i class="fas fa-chevron-down ml-2 text-sm"></i>
+            </button>
+            <ul
+              id="mobile-products-dropdown"
+              class="hidden pl-6 space-y-2 mt-2 border-l-2 border-idcHighlight"
+            >
+              <li>
+                <a
+                  href="/categories/furniture"
+                  class="block text-lg hover:text-idcHighlight"
+                  >Furniture</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/categories/electronics"
+                  class="block text-lg hover:text-idcHighlight"
+                  >Electronics</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/categories/cars"
+                  class="block text-lg hover:text-idcHighlight"
+                  >Cars</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/categories/appliances"
+                  class="block text-lg hover:text-idcHighlight"
+                  >Household Appliances</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <a href="#projects" class="block text-lg hover:text-idcHighlight"
+            >Gallery</a
+          >
+          <a href="#contact" class="block text-lg hover:text-idcHighlight"
+            >Contact</a
+          >
         </div>
-        <ul
-          id="search-suggestions"
-          class="bg-idcBackground rounded-lg shadow-lg mt-2 hidden"
-        ></ul>
-        <div id="search-loader" class="hidden text-center mt-2">
-          <i class="fas fa-spinner fa-spin text-idcHighlight text-xl"></i>
-        </div>
-      </div>
+      </nav>
     </header>
 
     <!-- Hero Section -->

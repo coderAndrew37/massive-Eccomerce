@@ -30,6 +30,33 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Fetch products by category with pagination
+router.get("/categories/:category", async (req, res) => {
+  const { category } = req.params;
+  const page = parseInt(req.query.page, 10) || 1;
+  const limit = parseInt(req.query.limit, 10) || 12;
+
+  try {
+    const filter = { category };
+    const totalProducts = await Product.countDocuments(filter);
+    const totalPages = Math.ceil(totalProducts / limit);
+
+    const products = await Product.find(filter)
+      .skip((page - 1) * limit)
+      .limit(limit);
+
+    res.json({
+      products,
+      currentPage: page,
+      totalPages,
+      totalProducts,
+    });
+  } catch (error) {
+    console.error(`Error fetching products for category ${category}:`, error);
+    res.status(500).json({ error: `Failed to fetch products for ${category}` });
+  }
+});
+
 // Fetch products by IDs
 router.get("/by-ids", async (req, res) => {
   const ids = req.query.ids ? req.query.ids.split(",") : [];

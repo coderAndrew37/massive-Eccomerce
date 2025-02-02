@@ -14,14 +14,14 @@
       >
         <!-- Logo -->
         <a href="/" class="text-2xl font-bold text-idcPrimary">
-          <i class="fas fa-store"></i> Broad Spectrum Mart
+          <i class="fas fa-couch"></i> Cozy Living Furniture
         </a>
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex space-x-6 text-idcPrimary relative">
           <a href="#about" class="hover:text-idcHighlight transition">About</a>
 
-          <!-- Dropdown for Products -->
+          <!-- Dropdown for Categories -->
           <div class="relative group">
             <a
               href="#categories"
@@ -35,46 +35,43 @@
               <ul class="p-4 space-y-2">
                 <li>
                   <a
-                    href="/categories.html?category=furniture"
+                    href="/categories.html?category=recliners"
                     class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
-                    >Furniture</a
+                    >Recliners</a
                   >
                 </li>
                 <li>
                   <a
-                    href="/categories.html?category=electronics"
+                    href="/categories.html?category=sofas"
                     class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
-                    >Electronics</a
+                    >Sofas</a
                   >
                 </li>
                 <li>
                   <a
-                    href="/categories.html?category=cars"
+                    href="/categories.html?category=dining-tables"
                     class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
-                    >Cars</a
+                    >Dining Tables</a
                   >
                 </li>
                 <li>
                   <a
-                    href="/categories.html?category=plots"
+                    href="/categories.html?category=office-chairs"
                     class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
-                    >Plots</a
+                    >Office Chairs</a
                   >
                 </li>
                 <li>
                   <a
-                    href="/categories.html?category=household"
+                    href="/categories.html?category=beds"
                     class="block px-4 py-2 hover:bg-idcHighlight rounded-md"
-                    >Household Appliances</a
+                    >Beds</a
                   >
                 </li>
               </ul>
             </div>
           </div>
 
-          <a href="#projects" class="hover:text-idcHighlight transition"
-            >Gallery</a
-          >
           <a href="#contact" class="hover:text-idcHighlight transition"
             >Contact</a
           >
@@ -100,9 +97,8 @@
             <span
               id="cart-count"
               class="js-cart-quantity absolute top-0 right-0 bg-idcHighlight text-black text-sm rounded-full px-2 py-1"
+              >0</span
             >
-              0
-            </span>
           </a>
 
           <!-- Auth -->
@@ -146,43 +142,38 @@
           <ul class="space-y-2">
             <li>
               <a
-                href="/categories.html?category=furniture"
+                href="/categories.html?category=recliners"
                 class="block text-lg hover:text-idcHighlight flex items-center"
+                ><i class="fas fa-chair mr-3"></i> Recliners</a
               >
-                <i class="fas fa-couch mr-3"></i> Furniture
-              </a>
             </li>
             <li>
               <a
-                href="/categories.html?category=electronics"
+                href="/categories.html?category=sofas"
                 class="block text-lg hover:text-idcHighlight flex items-center"
+                ><i class="fas fa-couch mr-3"></i> Sofas</a
               >
-                <i class="fas fa-tv mr-3"></i> Electronics
-              </a>
             </li>
             <li>
               <a
-                href="/categories.html?category=cars"
+                href="/categories.html?category=dining-tables"
                 class="block text-lg hover:text-idcHighlight flex items-center"
+                ><i class="fas fa-utensils mr-3"></i> Dining Tables</a
               >
-                <i class="fas fa-car mr-3"></i> Cars
-              </a>
             </li>
             <li>
               <a
-                href="/categories.html?category=plots"
+                href="/categories.html?category=office-chairs"
                 class="block text-lg hover:text-idcHighlight flex items-center"
+                ><i class="fas fa-chair-office mr-3"></i> Office Chairs</a
               >
-                <i class="fas fa-map mr-3"></i> Plots
-              </a>
             </li>
             <li>
               <a
-                href="/categories.html?category=appliances"
+                href="/categories.html?category=beds"
                 class="block text-lg hover:text-idcHighlight flex items-center"
+                ><i class="fas fa-bed mr-3"></i> Beds</a
               >
-                <i class="fas fa-blender mr-3"></i> Household Appliances
-              </a>
             </li>
           </ul>
 
@@ -205,7 +196,7 @@
             type="text"
             id="search-input"
             class="w-full p-2 text-idcText bg-idcBackground rounded-lg border border-idcHighlight focus:outline-none"
-            placeholder="Search for products..."
+            placeholder="Search for furniture..."
           />
           <button id="close-search" class="ml-4 text-idcPrimary">
             <i class="fas fa-times text-xl"></i>

@@ -1025,3 +1025,19 @@
 2025-01-14T19:13:54.304Z [INFO]: Server running on port 8000
 2025-01-14T19:13:55.342Z [INFO]: Connected to MongoDB
 2025-01-14T19:28:38.874Z [INFO]: Server running on port 8000
+2025-02-02T07:12:13.295Z [INFO]: Server running on port 3000
+2025-02-02T07:12:42.675Z [ERROR]: Could not connect to MongoDB connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+2025-02-02T07:13:07.747Z [INFO]: Server running on port 3000
+2025-02-02T07:13:37.017Z [ERROR]: Could not connect to MongoDB connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+2025-02-02T07:16:57.288Z [INFO]: Server running on port 3000
+2025-02-02T07:16:59.854Z [INFO]: Connected to MongoDB
+2025-02-02T07:18:31.863Z [INFO]: Server running on port 8000
+2025-02-02T07:18:34.230Z [INFO]: Connected to MongoDB
+2025-02-02T07:34:14.431Z [INFO]: Server running on port 8000
+2025-02-02T07:34:16.483Z [INFO]: Connected to MongoDB
+2025-02-02T07:41:15.948Z [INFO]: Server running on port 8000
+2025-02-02T07:41:43.203Z [ERROR]: Could not connect to MongoDB querySrv ETIMEOUT _mongodb._tcp.cluster0.qnpip.mongodb.net
+2025-02-02T07:42:09.270Z [INFO]: Server running on port 8000
+2025-02-02T07:42:31.433Z [ERROR]: Could not connect to MongoDB querySrv ETIMEOUT _mongodb._tcp.cluster0.qnpip.mongodb.net
+2025-02-02T07:43:16.127Z [INFO]: Server running on port 8000
+2025-02-02T07:43:18.327Z [INFO]: Connected to MongoDB
